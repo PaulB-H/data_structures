@@ -104,6 +104,13 @@
         >
           <p>Free Code Camp - Data Structures</p>
         </a>
+        <a
+          class="header-link"
+          href="https://www.freecodecamp.org"
+          target="_blank"
+        >
+          <p>Free Code Camp</p>
+        </a>
         <a class="header-link" href="https://www.devbypaul.ca" target="_blank">
           <p>devbypaul</p>
         </a>
@@ -137,12 +144,21 @@
 
         <div class="item-desc">
           <h3>Stack Description</h3>
-          <p class="item-desc-text"></p>
-          <p class="item-desc-text"></p>
+          <p class="item-desc-text">
+            A stack is a last-in-first-out type of structure Very much like a
+            stack of books. Example: browser back button.
+          </p>
           <pre>
-Plaintext pre formatting 
-  No highlighting here
-          </pre>
+Usual functions: 
+  push, pop, peek, length</pre
+          >
+          <p class="item-desc-text">
+            Arrays in Javascript already have all the functions (and more...) to
+            use it as a stack, so you could just use an array as a stack. We can
+            also create a stack class with only the functionality we would
+            expect from a stack.
+          </p>
+          <br />
         </div>
 
         <hr />
@@ -150,20 +166,26 @@ Plaintext pre formatting
         <div class="item-code-example">
           <h3>Example in Javascript:</h3>
           <pre>
-            <code class="language-javascript">function JsCodeHere(){
-  let string = "
-    Notice how the first line is inline with the
-    opening code tag - This is necessary for proper
-    highlight.js line numbers
-  ";
+            <code class="language-javascript">let letters = []; // this is our stack
 
-  let string = "
-    Also beucase of css 'tr td {padding-right: 10px}'
-    no longer need to add extra space to left of
-    code to distance from line numbers
-  ";
-  
-  return solution;
+let word = "racecar"
+
+let rword = "";
+
+// put letters of word into stack
+for (let i = 0; i < word.length; i++ ) {
+  letters.push(word[i])
+}
+
+// pop off the stack in reverse order
+for (let i = 0; i < word.length; i++ ) {
+  rword += letters.pop();
+}
+
+if (rword === word) {
+  console.log(word + " is a palindrome.");
+} else {
+  console.log(word + " is not a palindrome.");
 }
             </code>
           </pre>

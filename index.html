@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Structures in Javascript</title>
+    <!-- Highlight.js default CSS -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css"
+    /> -->
+    <!-- Highlight.js vs2015 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/vs2015.min.css"
+      integrity="sha512-w8aclkBlN3Ha08SMwFKXFJqhSUx2qlvTBFLLelF8sm4xQnlg64qmGB/A6pBIKy0W8Bo51yDMDtQiPLNRq1WMcQ=="
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scrollbar-width: thin;
+        scrollbar-color: black white;
+        -webkit-scrollbar-thumb: black;
+      }
+      #content {
+        padding: 5px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      hr {
+        margin: 5px 0 5px 0;
+      }
+      pre {
+        white-space: break-spaces;
+        margin: 10px 0;
+      }
+      h2 {
+        margin-bottom: 3px;
+      }
+
+      #page-header {
+      }
+      #header-title {
+        text-decoration: underline;
+      }
+      .header-link {
+      }
+      .header-link p {
+        margin: 5px 0;
+      }
+
+      .item {
+      }
+      .item hr {
+        display: none;
+      }
+
+      .item-header {
+        text-align: center;
+        max-width: max-content;
+        margin: 0 auto;
+      }
+      .item-title {
+      }
+      .item-resource-link {
+        display: none;
+      }
+
+      .item-desc {
+      }
+      .item-desc-text {
+        text-indent: 25px;
+        margin-top: 5px;
+      }
+      .item-desc pre {
+      }
+
+      .item-code-example {
+      }
+
+      /* highlight.js line numbers */
+      /* 10px pad to the right of all line numbers */
+      tr td {
+        padding-right: 10px !important;
+      }
+    </style>
+  </head>
+  <body style="height: 100%">
+    <div id="content">
+      <div id="page-header">
+        <h2 id="header-title">Data Structures</h2>
+
+        <a
+          class="header-link"
+          href="https://www.youtube.com/watch?v=t2CEgPsws3U"
+          target="_blank"
+        >
+          <p>Free Code Camp - Data Structures</p>
+        </a>
+        <a class="header-link" href="https://www.devbypaul.ca" target="_blank">
+          <p>devbypaul</p>
+        </a>
+      </div>
+      <hr />
+      <!-- END page header -->
+
+      <div class="item template_div">
+        <div class="item-header">
+          <h2 class="item-title">Structure Name</h2>
+          <a class="item-resource-link" href="enter_link_here" target="_blank">
+            <p>Link to resource</p>
+          </a>
+        </div>
+
+        <hr />
+
+        <div class="item-desc">
+          <h3>Structure Description</h3>
+          <p class="item-desc-text">
+            25px text indented text block here Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Suspendisse vitae leo ex. Etiam nec
+            lectus eu ex tempus sagittis eu quis elit.
+          </p>
+          <p class="item-desc-text">
+            25px text indented text block here Fusce sed venenatis diam. In
+            molestie est vitae augue pretium consequat. Praesent suscipit mauris
+            et dignissim elementum. Morbi sed ante tristique, pulvinar augue
+            sed, cursus felis. Nulla facilisi. Donec non arcu id diam molestie
+            accumsan.
+          </p>
+          <pre>
+Plaintext pre formatting 
+  No highlighting here
+          </pre>
+        </div>
+
+        <hr />
+
+        <div class="item-code-example">
+          <h3>Example in Javascript:</h3>
+          <pre>
+            <code class="language-javascript">function JsCodeHere(){
+  let string = "
+    Notice how the first line is inline with the
+    opening code tag - This is necessary for proper
+    highlight.js line numbers
+  ";
+
+  let string = "
+    Also beucase of css 'tr td {padding-right: 10px}'
+    no longer need to add extra space to left of
+    code to distance from line numbers
+  ";
+  
+  return solution;
+}
+            </code>
+          </pre>
+        </div>
+      </div>
+      <hr />
+      <!-- END item template -->
+    </div>
+    <!-- END content -->
+
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <!-- Highlight.js Line Numbers -->
+    <script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.6.0/dist/highlightjs-line-numbers.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+      hljs.initLineNumbersOnLoad();
+    </script>
+  </body>
+</html>

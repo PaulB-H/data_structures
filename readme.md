@@ -11,7 +11,7 @@
 </p>
 <a 
   class="header-link"
-  href="https://www.paulb-h.github.io/data_structures/"
+  href="https://paulb-h.github.io/data_structures/"
   target="_blank"
 >
   <p>Live site</p>

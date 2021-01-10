@@ -389,6 +389,86 @@ console.log(setD.add("a"))
       <hr />
       <!-- END set -->
 
+      <div class="item">
+        <div class="item-header">
+          <h2 class="item-title">Queue</h2>
+          <a class="item-resource-link" href="enter_link_here" target="_blank">
+            <p>Link to resource</p>
+          </a>
+        </div>
+
+        <hr />
+
+        <div class="item-desc">
+          <h3>Structure Description</h3>
+          <p class="item-desc-text">
+            The que is a first-in-first-out data structure. You can use a
+            JavaScript array as a queue, but if you want to limit it to the
+            methods a queue normally has, we will have to build the class
+            ourselves.
+          </p>
+          <pre>
+Usual methods:
+  print, enqueue, dequeue, front, size, isEmpty
+          </pre>
+        </div>
+
+        <hr />
+
+        <div class="item-code-example">
+          <h3>Example in Javascript:</h3>
+          <pre>
+            <code class="language-javascript">function JsCodeHere(){
+function Queue () {
+  let collection = []
+
+  // helper function to print queue
+  this.print = function () {
+    console.log(collection)
+  };
+
+  // add item to que at end of array
+  this.enqueue = function (element) {
+    collection.push(element)
+  };
+
+  // take off first item from array
+  this.dequeue = function () {
+    return collection.shift()
+  };
+
+  // returns front item without removing it
+  this.front = function () {
+    return collection[0]
+  };
+
+  this.size = function () {
+    return collection.length;
+  };
+
+  // if empty returns true, else returns false
+  this.isEmpty = function () {
+    return (collection.length === 0)
+  };
+
+}
+
+let q = new Queue();
+
+q.enqueue("a");
+q.enqueue("b");
+q.enqueue("c");
+q.print();
+q.dequeue();
+console.log(q.front());
+q.print();
+            </code>
+          </pre>
+        </div>
+      </div>
+      <hr />
+      <!-- END template -->
+
       <div class="item template_div" style="display: none">
         <div class="item-header">
           <h2 class="item-title">Structure Name</h2>

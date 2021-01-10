@@ -467,7 +467,106 @@ q.print();
         </div>
       </div>
       <hr />
-      <!-- END template -->
+      <!-- END queue -->
+
+      <div class="item">
+        <div class="item-header">
+          <h2 class="item-title">Priority Queue</h2>
+          <a class="item-resource-link" href="enter_link_here" target="_blank">
+            <p>Link to resource</p>
+          </a>
+        </div>
+
+        <hr />
+
+        <div class="item-desc">
+          <h3>Structure Description</h3>
+          <p class="item-desc-text">
+            In a priority queue not only do you pass the element into the queue,
+            you also pass the priority of the element. If all the priorities are
+            the same number, it will behave like a normal queue, but if you pass
+            in elements with different priorities, the elements with higher
+            priority will get sent to the front of the queue depending on
+            priority level
+          </p>
+          <p class="item-desc-text">
+            Everything is the same in a priority que, except the enque function,
+            if the queue is NOT empty, we have to check each item in the queue
+            to check what the priorities are vs the item we are adding priority
+          </p>
+          <p class="item-desc-text">
+            Note: for our priority check in enqueue() method is the priority of
+            the element we are passing into the que LESS than the priority of
+            the item in the collection we are checking. Checking starts from
+            front to back
+          </p>
+          <pre>
+Usual methods same as normal queue:
+  print, enqueue, dequeue, front, size, isEmpty
+
+Important: When passing in items to enqueue pass item then priority level
+  let myPriorityQueue = new PriorityQueue();
+  
+  myPriorityQueue.enqueue("Watch netflix", 0)
+  myPriorityQueue.enqueue("Study", 5)
+  myPriorityQueue.enqueue("exercise", 3)
+
+  myPriorityQueue.printCollection();
+  // Returns [["Study", 5], ["Exercise", 3], ["Watch netflix", 0]]
+          </pre>
+        </div>
+
+        <hr />
+
+        <div class="item-code-example">
+          <h3>Example in Javascript:</h3>
+          <pre>
+            <code class="language-javascript">function PriorityQueue() {
+  let collection = [];
+
+  this.printCollection = function () {
+    console.log(collection);
+  };
+  // the enqueue method is where the priority check is done
+  this.enqueue = function (element) {
+    if (this.isEmpty()) {
+      collection.push(element)
+    } else {
+      let added = false;
+      for (let i = 0; i < collection.length; i++) {
+        //Priority Check
+        if (element[1] < collection[i][1]) { 
+          collection.splice(i, 0, element);
+          added = true;
+          break;
+        }
+        if (!added) {
+          collection.push(element)
+        }
+      }
+    }
+    // For dequeue() we could return the entire element with item and priority, we are just returning the item itself
+    this.dequeue = function () {
+      let value = collection.shift();
+      return value[0]
+    }
+    this.front = function () {
+      return collection[0]
+    }
+    this.size = function () {
+      return collection.length;
+    }
+    this.isEmpty = function () {
+      return (collection.length === 0)
+    }
+  }
+}
+            </code>
+          </pre>
+        </div>
+      </div>
+      <hr />
+      <!-- END priority queue -->
 
       <div class="item template_div" style="display: none">
         <div class="item-header">

@@ -266,14 +266,11 @@ Build in ES6 set ONLY has :
           <h3>Example in Javascript:</h3>
           <pre>
             <code class="language-javascript">function mySet() {
-  // This will hold the set
-  // Normally array can have duplicate items
-  // but we will prevent that
+  // This will hold the set. Normally arrays can have duplicate items, but we will prevent that in our add() method
   let collection = [];
 
-  // check for presence of element and return true or false
-  // Note: indexOf will return -1 if it does not exist, so if it
-  // is NOT -1 it DOES exist
+  // Check for presence of element, returns true or false
+  // Note: indexOf will return -1 if it does not exist, so if it is NOT -1 it DOES exist
   this.has = function (element) {
     return collection.indexOf(element) !== -1;
   };
@@ -347,8 +344,7 @@ Build in ES6 set ONLY has :
   };
 
   // Check if set is a subset of a different set
-  // subset: If the first set is completely
-  // contained within a different set
+  // subset: If the first set is completely contained within a different set
   this.subset = function (otherSet) {
     let firstSet = this.values();
     return firstSet.every(function (value) {

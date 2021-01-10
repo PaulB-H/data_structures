@@ -246,8 +246,9 @@ let myStack = new stack();
           <h3>Structure Description</h3>
           <p class="item-desc-text">
             Sets are like an array, but with no duplicates, and no particular
-            order Useful just to check for presence of an item. The built in set
-            object in ES6 does not contain all the methods common to sets.
+            order. They are useful to check just for the presence of an item.
+            ES6 has a built in set class, however it does not contain all the
+            methods common to sets.
           </p>
           <pre>
 Usual methods:
@@ -363,6 +364,24 @@ setB.add("a")
 setB.add("a")
 
 console.log(setA.subset(setB))
+console.log(setA.intersection(setB).values())
+console.log(setB.difference(setA).values())
+
+// Examples using ES6 Set
+
+let setC = new Set();
+let setD = new Set();
+
+setC.add("a")
+setD.add("b")
+setD.add("c")
+setD.add("a")
+setD.add("a")
+
+console.log(setD.values())
+setD.delete("a")
+console.log(setD.has("a"))
+console.log(setD.add("a"))
             </code>
           </pre>
         </div>

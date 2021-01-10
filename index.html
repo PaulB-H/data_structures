@@ -134,7 +134,7 @@
       <hr />
       <!-- END page header -->
 
-      <div class="item template_div">
+      <div class="item">
         <div class="item-header">
           <h2 class="item-title">Stack</h2>
           <a class="item-resource-link" href="enter_link_here" target="_blank">
@@ -231,6 +231,148 @@ let myStack = new stack();
       </div>
       <hr />
       <!-- END stack -->
+
+      <div class="item">
+        <div class="item-header">
+          <h2 class="item-title">Set</h2>
+          <a class="item-resource-link" href="enter_link_here" target="_blank">
+            <p>Link to resource</p>
+          </a>
+        </div>
+
+        <hr />
+
+        <div class="item-desc">
+          <h3>Structure Description</h3>
+          <p class="item-desc-text">
+            Sets are like an array, but with no duplicates, and no particular
+            order Useful just to check for presence of an item. The built in set
+            object in ES6 does not contain all the methods common to sets.
+          </p>
+          <pre>
+Usual methods:
+  has, values, add, remove, size, union, intersection, difference, subset
+
+Build in ES6 set ONLY has :
+  values, add, remove(as delete), and size(size as a property not method)
+
+- Note: In subset() the every() method we use tests if all items in the array pass a test implemented by the provided function, in our case we pass in otherSet.has()
+          </pre>
+        </div>
+
+        <hr />
+
+        <div class="item-code-example">
+          <h3>Example in Javascript:</h3>
+          <pre>
+            <code class="language-javascript">function mySet() {
+  // This will hold the set
+  // Normally array can have duplicate items
+  // but we will prevent that
+  let collection = [];
+
+  // check for presence of element and return true or false
+  // Note: indexOf will return -1 if it does not exist, so if it
+  // is NOT -1 it DOES exist
+  this.has = function (element) {
+    return collection.indexOf(element) !== -1;
+  };
+
+  // return all values in set
+  this.values = function () {
+    return collection;
+  };
+
+  // add element to set
+  this.add = function (element) {
+    if (!this.has(element)) {
+      collection.push(element);
+      return true;
+    }
+    return false;
+  };
+
+  // remove from set
+  this.remove = function (element) {
+    if (this.has(element)) {
+      index = collection.indexOf(element);
+      collection.splice(index, 1);
+      return true;
+    }
+    return false;
+  };
+
+  // returns size of collection
+  this.size = function () {
+    return collection.length;
+  };
+
+  // return union of two sets
+  this.union = function (otherSet) {
+    let unionSet = new mySet();
+    let firstSet = this.values();
+    let secondSet = otherSet.values();
+    firstSet.forEach(function (e) {
+      unionSet.add(e);
+    });
+    secondSet.forEach(function (e) {
+      unionSet.add(e);
+    });
+    return unionSet;
+  };
+
+  // return intersection of two sets as a new set
+  // (all of the items that are in both sets)
+  this.intersection = function (otherSet) {
+    let intersectionSet = new mySet();
+    let firstSet = this.values();
+    firstSet.forEach(function (e) {
+      if (otherSet.has(e)) {
+        intersectionSet.add(e);
+      }
+    });
+    return intersectionSet;
+  };
+
+  // return difference between two sets as a new set
+  this.difference = function (otherSet) {
+    let differenceSet = new mySet();
+    let firstSet = this.values();
+    firstSet.forEach(function (e) {
+      if (!otherSet.has(e)) {
+        differenceSet.add(e);
+      }
+    });
+    return differenceSet;
+  };
+
+  // Check if set is a subset of a different set
+  // subset: If the first set is completely
+  // contained within a different set
+  this.subset = function (otherSet) {
+    let firstSet = this.values();
+    return firstSet.every(function (value) {
+      return otherSet.has(value);
+    });
+  };
+}
+
+let setA = new mySet();
+let setB = new mySet();
+
+setA.add("a")
+setB.add("b")
+setB.add("c")
+setB.add("a")
+setB.add("a")
+
+console.log(setA.subset(setB))
+            </code>
+          </pre>
+        </div>
+      </div>
+      <hr />
+      <!-- END set -->
 
       <div class="item template_div" style="display: none">
         <div class="item-header">

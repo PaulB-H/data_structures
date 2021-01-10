@@ -191,10 +191,46 @@ if (rword === word) {
 }
             </code>
           </pre>
+          <h3>Creating a custom stack function</h3>
+          <pre>
+            <code class="language-javascript">let stack = function () {
+  this.count = 0;
+  this.storage = {};
+
+  // add value to end of stack
+  this.push = function (value) {
+    this.storage[this.count] = value;
+    this.count++;
+  }
+
+  this.pop = function () {
+    if (this.count === 0) {
+      return undefined;
+    }
+
+    this.count --;
+    let result = this.storage[this.count];
+    delete this.storage[this.count];
+    return result
+  }
+
+  this.size = function () {
+    return this.count();
+  }
+
+  this.peek = function () {
+    return this.storage[this.count-1];
+  }
+
+}
+
+let myStack = new stack();
+            </code>
+          </pre>
         </div>
       </div>
       <hr />
-      <!-- END item template -->
+      <!-- END stack -->
 
       <div class="item template_div" style="display: none">
         <div class="item-header">
@@ -251,7 +287,7 @@ Plaintext pre formatting
         </div>
       </div>
       <hr />
-      <!-- END item template -->
+      <!-- END template -->
     </div>
     <!-- END content -->
 

@@ -418,8 +418,7 @@ Usual methods:
         <div class="item-code-example">
           <h3>Example in Javascript:</h3>
           <pre>
-            <code class="language-javascript">function JsCodeHere(){
-function Queue () {
+            <code class="language-javascript">function Queue () {
   let collection = []
 
   // helper function to print queue
@@ -527,40 +526,42 @@ Important: When passing in items to enqueue pass item then priority level
   this.printCollection = function () {
     console.log(collection);
   };
-  // the enqueue method is where the priority check is done
+
+  // this method is where priority check is done
   this.enqueue = function (element) {
     if (this.isEmpty()) {
-      collection.push(element)
+      collection.push(element);
     } else {
       let added = false;
       for (let i = 0; i < collection.length; i++) {
-        //Priority Check
-        if (element[1] < collection[i][1]) { 
+        if (element[1] < collection[i][1]) {
           collection.splice(i, 0, element);
           added = true;
           break;
         }
         if (!added) {
-          collection.push(element)
+          collection.push(element);
         }
       }
     }
-    // For dequeue() we could return the entire element with item and priority, we are just returning the item itself
-    this.dequeue = function () {
-      let value = collection.shift();
-      return value[0]
-    }
-    this.front = function () {
-      return collection[0]
-    }
-    this.size = function () {
-      return collection.length;
-    }
-    this.isEmpty = function () {
-      return (collection.length === 0)
-    }
   }
-}
+
+  // For dequeue() we could return the entire element with item and priority, here we are just returning the item itself
+  this.dequeue = function () {
+    let value = collection.shift();
+    return value[0];
+  };
+
+  this.front = function () {
+    return collection[0];
+  };
+  this.size = function () {
+    return collection.length;
+  };
+  this.isEmpty = function () {
+    return collection.length === 0;
+  };
+};
             </code>
           </pre>
         </div>

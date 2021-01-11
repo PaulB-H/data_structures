@@ -534,11 +534,11 @@ Important: When passing in items to enqueue pass item then priority level
         <div class="item-code-example">
           <h3>Example in Javascript:</h3>
           <pre>
-            <code class="language-javascript">function PriorityQueue() {
+            <code class="language-javascript">function PriorityQueue () {
   let collection = [];
 
   this.printCollection = function () {
-    console.log(collection);
+    (console.log(collection));
   };
 
   // this method is where priority check is done
@@ -553,9 +553,9 @@ Important: When passing in items to enqueue pass item then priority level
           added = true;
           break;
         }
-        if (!added) {
-          collection.push(element);
-        }
+      }
+      if (!added) {
+        collection.push(element);
       }
     }
   }

@@ -720,32 +720,24 @@ class BST {
         return null;
       }
       if (data == node.data) {
-        // We have found the data we are looking for
         // node has no children
         if (node.left == null && node.right == null) {
-          // We are setting reference the node that had that data to null
           return null;
         }
         // node has no left child
         if (node.left == null) {
-          // replace this node with whatever is on the right
           return node.right;
         }
         // node has no right child
         if (node.right == null) {
-          // replace this node with whatever is on the left
           return node.left;
         }
         // node has 2 children
         let tempNode = node.right;
-        // Go to right of node we want to remove
         while (tempNode.left !== null) {
-          // Then we go to the left most item from the right of the node we want to delete
           tempNode = tempNode.left;
         }
-        // Replace the node we want to remove with the leftmost found item
         node.data = tempNode.data;
-        // Here we call removeNode function again. This is where it starts to get recursive, we pass in the node on the right, and the tempNode.data
         node.right = removeNode(node.right, tempNode.data);
         return node;
       } else if (data < node.data) {
@@ -756,8 +748,7 @@ class BST {
         return node;
       }
     };
-    // Here is where we actually call the function at the end
-    //
+    // this is where the removeNode() function is actually called
     this.root = removeNode(this.root, data);
   }
 }

@@ -596,7 +596,7 @@ Important: When passing in items to enqueue pass item then priority level
         <div class="item-desc">
           <h3>Structure Description</h3>
           <p class="item-desc-text">
-            Tree data structure is a way to store data where, when visualised,
+            Tree data structure is a way to store data where, when visualized,
             looks like a tree we see in nature. All data points in the tree are
             called nodes. The top node is called the ROOT node. From there it
             branches out into additional nodes, each of which might have more
@@ -634,6 +634,128 @@ Usual methods
   add, findMin, findMax, find, isPresent, remove
           </pre>
         </div>
+
+        <div class="item-header">
+          <h2 class="item-title">
+            Binary Search Tree:<br />Traversal and Height
+          </h2>
+          <a class="item-resource-link" href="enter_link_here" target="_blank">
+            <p>Link to resource</p>
+          </a>
+        </div>
+
+        <div class="item-desc">
+          <!-- <h3>Structure Description</h3> -->
+          <p class="item-desc-text">
+            Tree traversal methods can be used to explore tree data structures
+            and find all the values in the tree. In depth for search, a given
+            subtree is explored as deeply as possible before the search
+            continues on another subtree.
+          </p>
+          <p class="item-desc-text">
+            There are 4 traversal methods we will cover:
+          </p>
+          <ul style="margin-left: 50px">
+            <li>inOrder</li>
+            <li>preOrder</li>
+            <li>postOrder</li>
+            <li>levelOrder</li>
+          </ul>
+          <p class="item-desc-text">
+            For inOrder, preOrder and postOrder they are all the same EXCEPT for
+            these 3 lines in our “traverseInOrder(node)” method that determine
+            the order we work through the tree.
+          </p>
+          <pre>
+// Example for inOrder() traversal method
+// note the 3 actions we take in this function here and compare to the preOrder() and postOrder() methods in the code below
+
+inOrder(){
+  ...
+  function traverseInOrder (node) {
+----> node.left && traverseInOrder(node.left);
+----> result.push(node.data);
+----> node.right && traverseInOrder(node.right);
+  }
+  ...
+}</pre
+          >
+          <p class="item-desc-text">
+            inOrder Traversal, we begin the search at the leftmost node (lowest
+            value in the tree), and end at the rightmost node. This gives us all
+            of the values in the tree from smallest to largest.
+          </p>
+          <p class="item-desc-text">
+            preOrder() we explore the root nodes BEFORE the leaves root nodes
+            first then adds the nodes before them.
+          </p>
+          <p class="item-desc-text">
+            postOrder() explores the leaf nodes before the roots. Finish all
+            leaf nodes on one branch before going to the next branch.
+          </p>
+          <p class="item-desc-text">
+            levelOrder() is called a breadth first search. This explores all the
+            nodes in a given level of a tree before continuing on to the next
+            level.
+          </p>
+          <p class="item-desc-text">
+            In level order we start by adding the root node to a queue, then we
+            begin a loop where we dequeue the first item in the que, add to a
+            new array, then inspect boat its child subtrees, if they are both
+            not null, they are enqueued. We are creating a result array we will
+            eventually return
+          </p>
+        </div>
+
+        <div class="item-header">
+          <h2 class="item-title">Binary Search Tree:<br />Further Notes</h2>
+          <a class="item-resource-link" href="enter_link_here" target="_blank">
+            <p>Link to resource</p>
+          </a>
+        </div>
+
+        <div class="item-desc">
+          <!-- <h3>Structure Description</h3> -->
+          <p class="item-desc-text">
+            This example does not cover all types / implementations of binary
+            trees, and depending on how you insert data the tree can become
+            quickly unbalanced and function almost more like a linked list.
+          </p>
+          <p class="item-desc-text">
+            In order to keep high efficiency, some kind of self balancing is
+            required. I will come back to this topic after covering some other
+            data structures
+          </p>
+          <br />
+          <h3>Question I asked in "The Programmers Hangout" discord</h3>
+          <p class="item-desc-text">
+            I have been following a data structures course, and I'm on a basic
+            binary search tree. I have two questions:
+          </p>
+          <ul style="margin-left: 50px">
+            <li>What kind of data do you usually use a BST for?</li>
+            <li>
+              To balance a BST, do you like find as close to middle num as
+              possible. Set that as root of whole tree, take the half lower
+              values find medium make that root of first left node, and so on?
+            </li>
+          </ul>
+          <h3>Answer from user: li'l_panda#1200</h3>
+          <p class="item-desc-text">
+            Use it for stuff where you want to sort something and retain very
+            fast general types of operations (fast insertion, deletion, random
+            access, etc.). You can even use it like an array (sorted by index)
+            if you wanted, so really it's generally applicable.
+          </p>
+          <p class="item-desc-text">
+            There are plenty of ways to balance a binary tree (such as treaps,
+            AVL, etc.) but the important thing is to be both flexible, fast, and
+            fairly reliable. Your strategy would require checking the entire
+            tree just to find the middle node (too slow) and wouldn't
+            necessarily balance the left and right sides.
+          </p>
+        </div>
+        <br />
 
         <!-- Time complexity in big O notation
         ---------------------------------

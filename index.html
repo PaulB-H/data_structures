@@ -551,12 +551,12 @@ Important: When passing in items to enqueue pass item then priority level
 
   let myPriorityQueue = new PriorityQueue();
   
-  myPriorityQueue.enqueue("Watch netflix", 0)
-  myPriorityQueue.enqueue("Study", 5)
-  myPriorityQueue.enqueue("exercise", 3)
+  myPriorityQueue.enqueue(["Watch netflix", 5])
+  myPriorityQueue.enqueue(["Study", 0])
+  myPriorityQueue.enqueue(["exercise", 3])
 
   myPriorityQueue.printCollection();
-  // Returns [["Study", 5], ["Exercise", 3], ["Watch netflix", 0]]
+  // Returns [["Study", 0], ["Exercise", 3], ["Watch netflix", 5]]
           </pre>
         </div>
 
